@@ -1,5 +1,10 @@
-# labos_1
+# labos_2
 Zadatak iz 2. labosa iz kolegija OR.
+
+## About:<br />
+>• A lightweight web app<br />
+• Technology: Angular<br />
+• Technology: SQLite database<br />
 
 ## About:<br />
 >• All data in database is stored in english.<br />
