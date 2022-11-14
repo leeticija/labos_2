@@ -46,6 +46,7 @@ def get_product(type):
 @app.route('/download/<type>')
 def download_file(type):
   params: dict[str, Any] = request.args.to_dict()
+  print("PARAMS ", params.keys())
   attribute = list(params.keys())[0]
   value = params[attribute]
 

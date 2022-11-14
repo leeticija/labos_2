@@ -9,15 +9,15 @@
     <li><div><a [routerLink]="['/json']">Insects JSON</a></div></li>
     <li><div><a [routerLink]="['/csv']">Insects CSV</a></div></li>
   </ul>
-
-  <a href="http://localhost:8080/download/json" download ="insects.json">
+ 
+  <a href="http://localhost:8080/download/json?wildcard=" download ="insects.json">
   <span>
   <mat-icon inline>download</mat-icon>
   download insects json!
   </span>
   </a>
   <br>
-  <a href="http://localhost:8080/download/csv" download ="insects.json">
+  <a href="http://localhost:8080/download/csv?wildcard=" download ="insects.json">
     <span>
     <mat-icon inline>download</mat-icon>
     download insects csv!
