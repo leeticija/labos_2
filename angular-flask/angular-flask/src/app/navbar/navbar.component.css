@@ -1,0 +1,14 @@
+.spacer {
+  flex: 1 1;
+}
+
+[color=green] {
+  background-color: lightgreen;
+}
+[color=textColor] {
+  color: darkgreen;
+}
+
+.selected {
+  background-color: greenyellow;
+}

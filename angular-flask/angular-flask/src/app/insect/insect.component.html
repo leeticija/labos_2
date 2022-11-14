@@ -1,0 +1,56 @@
+<div class="main">
+<h1>
+  Insects table
+</h1>
+<table class="mytable" [cellPadding]="5">
+  <tr><td><input [(ngModel)]="searchInput" type="text" placeholder="value..."></td></tr>
+  <tr><td>
+    <select #attributes (change)="changeSelectedItem(attributes.value)" name="item">
+      <option default>wildcard</option>
+      <option *ngFor="let attr of searchableAttributes">{{attr}}</option>
+    </select></td>
+  </tr>
+</table>
+<button mat-button class="button" (click)="searchCallback()">Search</button>
+<br>
+<br>
+  <a href="http://localhost:8080/download/json?{{selectedItem}}={{searchInput}}" download ="insects.json">
+    <span>
+    <mat-icon inline>download</mat-icon>
+    download in JSON format!
+    </span>
+  </a>
+  <br>
+  <a href="http://localhost:8080/download/csv?{{selectedItem}}={{searchInput}}" download ="insects.json">
+    <span>
+    <mat-icon inline>download</mat-icon>
+    download in CSV format!
+    </span>
+  </a>
+<br>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th *ngFor="let attr of searchableAttributes">{{attr}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let insect of insects">
+      <td>{{insect.binomialName}}</td>
+      <td>{{insect.specie}}</td>
+      <td>{{insect.genus}}</td>
+      <td>{{insect.orderName}}</td>
+      <td>{{insect.orderCommonName}}</td>
+      <td>{{insect.wings}}</td>
+      <td>{{insect.totalSpeciesInOrder}}</td>
+      <td>{{insect.totalFamilies}}</td>
+      <td>{{insect.metamorphosis}}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+
+</div>

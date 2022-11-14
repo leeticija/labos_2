@@ -1,0 +1,19 @@
+<mat-toolbar color="green">
+  <span color="textColor">
+    <mat-icon>bug</mat-icon>
+    <img height="20px" src="img/bug.svg" alt="image">
+    InsectsGuide
+  </span>
+
+  <div class="spacer"></div>
+
+  <div color="textColor">
+  <a (click)="goToIndex()" mat-button [ngClass]="{selected: this.getRouter().url=='/home'}" >Home</a>
+  <a (click)="goToInsects()" mat-button [ngClass]="{selected: this.getRouter().url=='/insects'}">Table</a>
+  <a (click)="goToJson()" mat-button [ngClass]="{selected: this.getRouter().url=='/downloads'}">Downloads</a>
+  <a (click)="goToAbout()" mat-button [ngClass]="{selected: this.getRouter().url=='/about'}">About Us</a>
+  <a mat-button>License</a>
+  </div>
+
+</mat-toolbar>
+<router-outlet> </router-outlet>

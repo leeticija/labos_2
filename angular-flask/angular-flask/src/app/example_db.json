@@ -1,0 +1,44 @@
+{
+  "insects":
+  [
+    {
+      "insect_id" : 1,
+      "order_id" : 3,
+      "binomial_name":"Mantis religiosa",
+      "specie":"religiosa",
+      "genus":"Mantodea",
+      "order_name":"Mantodea",
+      "order_common_name":"Mantids",
+      "wings":"Two pair or wingless",
+      "total_species_in_order": 1800,
+      "total_families": 8,
+      "metamorphosis":"Gradual"
+    },
+    {
+      "insect_id" : 1,
+      "order_id" : 3,
+      "binomial_name":"Mantis religiosa",
+      "specie":"religiosa",
+      "genus":"Mantodea",
+      "order_name":"Mantodea",
+      "order_common_name":"Mantids",
+      "wings":"Two pair or wingless",
+      "total_species_in_order": 2000,
+      "total_families": 4,
+      "metamorphosis":"Gradual"
+    },
+    {
+      "insect_id" : 1,
+      "order_id" : 3,
+      "binomial_name":"Mantis religiosa",
+      "specie":"religiosa",
+      "genus":"Mantodea",
+      "order_name":"Mantodea",
+      "order_common_name":"Mantids",
+      "wings":"Two pair or wingless",
+      "total_species_in_order": 500,
+      "total_families": 3,
+      "metamorphosis":"Gradual"
+    }
+  ]
+}

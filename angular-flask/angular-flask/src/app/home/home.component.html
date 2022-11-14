@@ -1,0 +1,27 @@
+<div class="main">
+  <h2>Welcome to Insects Guide!</h2>
+  <h3>
+    Insect data is available in JSON and CSV formats.
+    You can fetch it on the following links:
+  </h3>
+
+  <ul>
+    <li><div><a [routerLink]="['/json']">Insects JSON</a></div></li>
+    <li><div><a [routerLink]="['/csv']">Insects CSV</a></div></li>
+  </ul>
+
+  <a href="http://localhost:8080/download/json" download ="insects.json">
+  <span>
+  <mat-icon inline>download</mat-icon>
+  download insects json!
+  </span>
+  </a>
+  <br>
+  <a href="http://localhost:8080/download/csv" download ="insects.json">
+    <span>
+    <mat-icon inline>download</mat-icon>
+    download insects csv!
+    </span>
+    </a>
+
+</div>

@@ -1,0 +1,26 @@
+order_id,order_name,order_common_name,wings,total_order_species,total_order_families,metamorphosis,insect_id,genus,specie,binomial_name,order_id
+1,Microcoryphia,Bristletails,None,450,2,None,4,Petrobius,brevistylus,Petrobius brevistylus,1
+2,Zygentoma,"Silverfish, Firebrats",None,370,5,None,3,Allacrotelsa,spinulata,Allacrotelsa spinulata,2,22,Machiloides ,banksi,Machiloides  banksi,2
+2,Zygentoma,"Silverfish, Firebrats",None,370,5,None,3,Allacrotelsa,spinulata,Allacrotelsa spinulata,2,22,Machiloides ,banksi,Machiloides  banksi,2
+3,Ephemeroptera,Mayflies,Two pair,2000,19,Incomplete,5,Caenis,hilaris,Caenis hilaris,3,23,Callibaetis ,ferrugineus ,Callibaetis ferrugineus,3,24,Callibaetis ,pallidus,Callibaetis  pallidus,3,25,Callibaetis ,skokianus,Callibaetis  skokianus,3
+3,Ephemeroptera,Mayflies,Two pair,2000,19,Incomplete,5,Caenis,hilaris,Caenis hilaris,3,23,Callibaetis ,ferrugineus ,Callibaetis ferrugineus,3,24,Callibaetis ,pallidus,Callibaetis  pallidus,3,25,Callibaetis ,skokianus,Callibaetis  skokianus,3
+3,Ephemeroptera,Mayflies,Two pair,2000,19,Incomplete,5,Caenis,hilaris,Caenis hilaris,3,23,Callibaetis ,ferrugineus ,Callibaetis ferrugineus,3,24,Callibaetis ,pallidus,Callibaetis  pallidus,3,25,Callibaetis ,skokianus,Callibaetis  skokianus,3
+3,Ephemeroptera,Mayflies,Two pair,2000,19,Incomplete,5,Caenis,hilaris,Caenis hilaris,3,23,Callibaetis ,ferrugineus ,Callibaetis ferrugineus,3,24,Callibaetis ,pallidus,Callibaetis  pallidus,3,25,Callibaetis ,skokianus,Callibaetis  skokianus,3
+4,Odonata,"Damselflies, Dragonflies",Two pair,5000,29,Incomplete,2,Anax,imperator,Anax imperator,4,12,Argia,emma,Argia emma,4,16,Pachydiplax,longipennis,Pachydiplax longipennis,4,17,Brachymesia,furcata,Brachymesia furcata,4,18,Brachymesia,gravida ,Brachymesia gravida ,4
+4,Odonata,"Damselflies, Dragonflies",Two pair,5000,29,Incomplete,2,Anax,imperator,Anax imperator,4,12,Argia,emma,Argia emma,4,16,Pachydiplax,longipennis,Pachydiplax longipennis,4,17,Brachymesia,furcata,Brachymesia furcata,4,18,Brachymesia,gravida ,Brachymesia gravida ,4
+4,Odonata,"Damselflies, Dragonflies",Two pair,5000,29,Incomplete,2,Anax,imperator,Anax imperator,4,12,Argia,emma,Argia emma,4,16,Pachydiplax,longipennis,Pachydiplax longipennis,4,17,Brachymesia,furcata,Brachymesia furcata,4,18,Brachymesia,gravida ,Brachymesia gravida ,4
+4,Odonata,"Damselflies, Dragonflies",Two pair,5000,29,Incomplete,2,Anax,imperator,Anax imperator,4,12,Argia,emma,Argia emma,4,16,Pachydiplax,longipennis,Pachydiplax longipennis,4,17,Brachymesia,furcata,Brachymesia furcata,4,18,Brachymesia,gravida ,Brachymesia gravida ,4
+4,Odonata,"Damselflies, Dragonflies",Two pair,5000,29,Incomplete,2,Anax,imperator,Anax imperator,4,12,Argia,emma,Argia emma,4,16,Pachydiplax,longipennis,Pachydiplax longipennis,4,17,Brachymesia,furcata,Brachymesia furcata,4,18,Brachymesia,gravida ,Brachymesia gravida ,4
+5,Plecoptera,Stoneflies,Two pair,2000,10,Incomplete,6,Alloperla,petasata,Alloperla petasata,5,14,Utaperla,gaspesiana,Utaperla gaspesiana,5
+5,Plecoptera,Stoneflies,Two pair,2000,10,Incomplete,6,Alloperla,petasata,Alloperla petasata,5,14,Utaperla,gaspesiana,Utaperla gaspesiana,5
+6,Phasmida,Walkingsticks,Wings either greatly reduced or lacking,3000,2,Gradual,7,Timema,californicum,Timema californicum,6,13,Pseudosermyle,catalinae,Pseudosermyle catalinae,6
+6,Phasmida,Walkingsticks,Wings either greatly reduced or lacking,3000,2,Gradual,7,Timema,californicum,Timema californicum,6,13,Pseudosermyle,catalinae,Pseudosermyle catalinae,6
+7,Orthoptera,"Crickets, Grasshoppers, and Katydids",Two pair or wingless,24000,29,Gradual,8,Arethaea,phantasma,Arethaea phantasma,7,19,Gryllotalpa,gryllotalpa,Gryllotalpa gryllotalpa,7,20,Gryllotalpa,major,Gryllotalpa major,7,21,Neocurtilla ,hexadactyla,Neocurtilla  hexadactyla,7
+7,Orthoptera,"Crickets, Grasshoppers, and Katydids",Two pair or wingless,24000,29,Gradual,8,Arethaea,phantasma,Arethaea phantasma,7,19,Gryllotalpa,gryllotalpa,Gryllotalpa gryllotalpa,7,20,Gryllotalpa,major,Gryllotalpa major,7,21,Neocurtilla ,hexadactyla,Neocurtilla  hexadactyla,7
+7,Orthoptera,"Crickets, Grasshoppers, and Katydids",Two pair or wingless,24000,29,Gradual,8,Arethaea,phantasma,Arethaea phantasma,7,19,Gryllotalpa,gryllotalpa,Gryllotalpa gryllotalpa,7,20,Gryllotalpa,major,Gryllotalpa major,7,21,Neocurtilla ,hexadactyla,Neocurtilla  hexadactyla,7
+7,Orthoptera,"Crickets, Grasshoppers, and Katydids",Two pair or wingless,24000,29,Gradual,8,Arethaea,phantasma,Arethaea phantasma,7,19,Gryllotalpa,gryllotalpa,Gryllotalpa gryllotalpa,7,20,Gryllotalpa,major,Gryllotalpa major,7,21,Neocurtilla ,hexadactyla,Neocurtilla  hexadactyla,7
+8,Dermaptera,Earwigs,Two pair or wingless,2000,8,Gradual,9,Forficula,auricularia,Forficula auricularia,8
+9,Mantodea,Mantids,Two pair or wingless,1800,8,Gradual,1,Mantis,religiosa,Mantis religiosa,9,11,Tenodera,sinensis,Tenodera sinensis,9
+9,Mantodea,Mantids,Two pair or wingless,1800,8,Gradual,1,Mantis,religiosa,Mantis religiosa,9,11,Tenodera,sinensis,Tenodera sinensis,9
+10,Blattodea,Cockroaches and termites,Two pair or wingless,4000,5,Gradual,10,Parcoblatta,americana,Parcoblatta americana,10,15,Eurycotis,floridiana,Eurycotis floridiana,10
+10,Blattodea,Cockroaches and termites,Two pair or wingless,4000,5,Gradual,10,Parcoblatta,americana,Parcoblatta americana,10,15,Eurycotis,floridiana,Eurycotis floridiana,10

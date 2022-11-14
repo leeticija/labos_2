@@ -1,0 +1,217 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "database"
+    ],
+    "properties": {
+        "database": {
+            "type": "array",
+            "default": [],
+            "title": "The database Schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "A Schema",
+                "required": [
+                    "order_id",
+                    "order_name",
+                    "order_common_name",
+                    "wings",
+                    "total_order_species",
+                    "total_order_families",
+                    "metamorphosis",
+                    "examples"
+                ],
+                "properties": {
+                    "order_id": {
+                        "type": "integer",
+                        "default": 0,
+                        "title": "The order_id Schema",
+                        "examples": [
+                            1
+                        ]
+                    },
+                    "order_name": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The order_name Schema",
+                        "examples": [
+                            "Microcoryphia"
+                        ]
+                    },
+                    "order_common_name": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The order_common_name Schema",
+                        "examples": [
+                            "Bristletails"
+                        ]
+                    },
+                    "wings": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The wings Schema",
+                        "examples": [
+                            "None"
+                        ]
+                    },
+                    "total_order_species": {
+                        "type": "integer",
+                        "default": 0,
+                        "title": "The total_order_species Schema",
+                        "examples": [
+                            450
+                        ]
+                    },
+                    "total_order_families": {
+                        "type": "integer",
+                        "default": 0,
+                        "title": "The total_order_families Schema",
+                        "examples": [
+                            2
+                        ]
+                    },
+                    "metamorphosis": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The metamorphosis Schema",
+                        "examples": [
+                            "None"
+                        ]
+                    },
+                    "examples": {
+                        "type": "array",
+                        "default": [],
+                        "title": "The examples Schema",
+                        "items": {
+                            "type": "object",
+                            "default": {},
+                            "title": "A Schema",
+                            "required": [
+                                "insect_id",
+                                "genus",
+                                "specie",
+                                "binomial_name",
+                                "order_id"
+                            ],
+                            "properties": {
+                                "insect_id": {
+                                    "type": "integer",
+                                    "default": 0,
+                                    "title": "The insect_id Schema",
+                                    "examples": [
+                                        4
+                                    ]
+                                },
+                                "genus": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The genus Schema",
+                                    "examples": [
+                                        "Petrobius"
+                                    ]
+                                },
+                                "specie": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The specie Schema",
+                                    "examples": [
+                                        "brevistylus"
+                                    ]
+                                },
+                                "binomial_name": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The binomial_name Schema",
+                                    "examples": [
+                                        "Petrobius brevistylus"
+                                    ]
+                                },
+                                "order_id": {
+                                    "type": "integer",
+                                    "default": 0,
+                                    "title": "The order_id Schema",
+                                    "examples": [
+                                        1
+                                    ]
+                                }
+                            },
+                            "examples": [{
+                                "insect_id": 4,
+                                "genus": "Petrobius",
+                                "specie": "brevistylus",
+                                "binomial_name": "Petrobius brevistylus",
+                                "order_id": 1
+                            }]
+                        },
+                        "examples": [
+                            [{
+                                "insect_id": 4,
+                                "genus": "Petrobius",
+                                "specie": "brevistylus",
+                                "binomial_name": "Petrobius brevistylus",
+                                "order_id": 1
+                            }]
+                        ]
+                    }
+                },
+                "examples": [{
+                    "order_id": 1,
+                    "order_name": "Microcoryphia",
+                    "order_common_name": "Bristletails",
+                    "wings": "None",
+                    "total_order_species": 450,
+                    "total_order_families": 2,
+                    "metamorphosis": "None",
+                    "examples": [{
+                        "insect_id": 4,
+                        "genus": "Petrobius",
+                        "specie": "brevistylus",
+                        "binomial_name": "Petrobius brevistylus",
+                        "order_id": 1
+                    }]
+                }]
+            },
+            "examples": [
+                [{
+                    "order_id": 1,
+                    "order_name": "Microcoryphia",
+                    "order_common_name": "Bristletails",
+                    "wings": "None",
+                    "total_order_species": 450,
+                    "total_order_families": 2,
+                    "metamorphosis": "None",
+                    "examples": [{
+                        "insect_id": 4,
+                        "genus": "Petrobius",
+                        "specie": "brevistylus",
+                        "binomial_name": "Petrobius brevistylus",
+                        "order_id": 1
+                    }]
+                }]
+            ]
+        }
+    },
+    "examples": [{
+        "database": [{
+            "order_id": 1,
+            "order_name": "Microcoryphia",
+            "order_common_name": "Bristletails",
+            "wings": "None",
+            "total_order_species": 450,
+            "total_order_families": 2,
+            "metamorphosis": "None",
+            "examples": [{
+                "insect_id": 4,
+                "genus": "Petrobius",
+                "specie": "brevistylus",
+                "binomial_name": "Petrobius brevistylus",
+                "order_id": 1
+            }]
+        }]
+    }]
+}

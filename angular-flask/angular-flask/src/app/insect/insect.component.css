@@ -1,0 +1,12 @@
+.main {
+  padding: 50px;
+}
+.button {
+  background-color: lightgreen;
+  margin-top: 5px;
+}
+
+.mytable {
+  border: 1px solid;
+  border-radius: 10px;
+}
