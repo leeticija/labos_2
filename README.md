@@ -20,5 +20,5 @@ Zadatak iz 2. labosa iz kolegija OR.
   and only so long as attribution is given to the creator. 
 
 
-version: **1.0**<br />
+version: **2.0**<br />
 Created by: **Leticija Crnković**<br />
