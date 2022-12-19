@@ -1,11 +1,10 @@
 # Insects guide app
 
+## About
+- project for laboratory exercises for `Open computing` course
+- interactive helper with learning about insects
 - A project in Angular (frontend) and Flask (backend)
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
-
-# About
-- project for laboratory exercises for `Open computing` course
-- 
 
 ## License
 - CC0 1.0 Universal
