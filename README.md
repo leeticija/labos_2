@@ -18,3 +18,8 @@
 
 ## Development server (frontend)
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## API
+- integreated in backend
+- usage is explained in `openapi.yaml`
+- you can use it as you please, for your own api calls from frontend
