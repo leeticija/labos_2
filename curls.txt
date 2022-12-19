@@ -1,0 +1,9 @@
+dohvat svih insekata: curl -X GET -i "127.0.0.1:8080/insects"
+dohvat pojedinog insekta by id: curl -X GET -i "127.0.0.1:8080/insects/<id>"
+dohvat pojedinog ordera: curl -X GET -i "127.0.0.1:8080/orders/<id>"
+dohvat polja metamorphosis pojedinog ordera: curl -X GET -i "127.0.0.1:8080/orders/<id>/metamorphosis"
+dohvat svih ordera koji imaju broj jedinki u danim granicama: curl -X GET -i "127.0.0.1:8080/orders/speciesCount?low=200&high=4000"
+dodavanje potpuno novog insekta: curl -X POST -d "order_name=Odonata&genus=Petrobius&specie=bugy" -i "127.0.0.1:8080/insects"
+update postojeceg insekta: curl -X PUT -d "order_id=2" -i "127.0.0.1:8080/insects/<id>"
+delete existing insect: curl -X DELETE -d "127.0.0.1:8080/insects/<id>"
+

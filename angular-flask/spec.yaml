@@ -1,0 +1,259 @@
+openapi: 3.0.3
+info:
+  title: Insekti - OpenAPI 3.0
+  description: |-
+    Skup podataka o insektima
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: leticija.crnkovic@fer.hr
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://localhost:8080/api
+tags:
+  - name: insect
+    description: Metode za upravljanje skupom podataka
+paths:
+  /insects:
+    get:
+      tags:
+        - insects
+      summary: List of all insects
+      description: List all insects in the dataset.
+      operationId: getInsects
+      responses:
+        '200':
+          description: Successful
+    post:
+      tags:
+        - insect
+      summary: Add a new insect
+      description: Add a new insect to the dataset.
+      operationId: addInsect
+      requestBody:
+        description: Add new insect to the dataset
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateInsect'
+        required: true
+      responses:
+        '200':
+          description: Successful creation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: Bad request format
+
+
+  /insects/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - insect
+      summary: Fetch insect by id
+      description: Fetches insect by specified id in URL path
+      responses:
+        '200':
+          description: Successful fetch
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    delete:
+      tags:
+        - insect
+      summary: Delete insect by id
+      description: Deletes insect by specified id in URL path
+      responses:
+        '200':
+          description: Successful deletion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    put:
+      tags:
+        - insect
+      summary: Update insect by id
+      description: Updates insect by specified id in URL path
+      requestBody:
+        description: Update existing insect in the dataset
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateInsect'
+        required: true
+      responses:
+        '200':
+          description: Successful update on an insect in dataset
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+
+  /orders/{id}/metamorphosis:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - order
+      summary: Fetch order metamorphosis field by id
+      description: Fetches insect metamorphosis by specified id in URL path
+      responses:
+        '200':
+          description: Successful fetch
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+  /orders/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - order
+      summary: Fetch order by id
+      description: Fetches order by specified id in URL path
+      responses:
+        '200':
+          description: Successful fetch
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+
+  /orders/speciesCount
+  # This expands into ?high=value1&low=value2
+    parameters:
+      - in: query
+        name: parameters
+        required: false
+        schema:
+          $ref: '#/components/schemas/SpeciesCountParameters'
+    get:
+      tags:
+        - orders
+      summary: Fetch orders which contain specified species count
+      description: Fetches order by specified id in URL path
+      responses:
+        '200':
+          description: Successful fetch
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  
+components:
+  schemas:
+
+    SpeciesCountParameters:
+      type: object
+      # no required fields
+      properties:
+        high:
+          type: integer
+        low:
+          type: integer
+
+    UpdateInsect:
+      type: object
+      # no required fields
+      properties:
+        order_id:
+          type: integer
+        genus:
+          type: string
+        specie:
+          type: string
+        binomial_name:
+          type: string
+
+    CreateInsect:
+      type: object
+      required:
+        - genus
+        - order_id
+        - specie
+      properties:
+        order_id:
+          type: integer
+        genus:
+          type: string
+        specie:
+          type: string
+        binomial_name:
+          type: string
+
+    ApiResponse:
+      type: object
+  requestBodies:
+    CreatePlant:
+      description: Pet object that needs to be added to the store
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreatePlant'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/CreatePlant'
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
