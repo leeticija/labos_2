@@ -31,9 +31,8 @@ white = ['http://127.0.0.1:4200']
 def hello_world():
     return render_template("index.html")
 
-@app.route('/spec.yaml')
+@app.route('/openapi.yaml')
 def yaml():
-  print("loadam")
   return render_template("spec.yaml")
 
 @app.get('/data/<type>')
