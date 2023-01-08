@@ -7,6 +7,7 @@ import csv
 from database_service import DatabaseService
 from typing import Any
 import traceback
+from authlib.integrations.flask_client import OAuth
 
 
 # da bi aplikacija mogla biti servirana potrebno je:
@@ -25,13 +26,37 @@ app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+app.secret_key = "UEMqaSs1egxlgPsdzwNNQoFo2Yzo2uUTHXT8l4eqwQW4JAJRIByEiM1rjXux8ssq"
+app.config['SERVER_NAME'] = 'localhost:8080'
+oauth = OAuth(app)
+
+
 white = ['http://127.0.0.1:4200']
 
 @app.route('/')
 def hello_world():
     return render_template("index.html")
 
-@app.route('/openapi.yaml')
+@app.route('/auth')
+def auth():
+  GOOGLE_CLIENT_ID = os.environ.get('C3AQOPClDE9YpeKYXOPqcadRz5HoIZqt')
+  GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
+  CONF_URL = 'dev-vre84xqo845hdb2k.us.auth0.com'
+  oauth.register(
+    name='google',
+    client_id=GOOGLE_CLIENT_ID,
+    client_secret=GOOGLE_CLIENT_SECRET,
+    server_metadata_url=CONF_URL,
+    client_kwargs={
+        'scope': 'openid email profile'
+      }
+    )
+     
+  # Redirect to google_auth function
+  redirect_uri = url_for('google_auth', _external=True)
+  return oauth.google.authorize_redirect(redirect_uri)
+
+@app.route('/api/openapi.yaml')
 def yaml():
   return render_template("spec.yaml")
 
@@ -71,7 +96,7 @@ def download_file(type):
     return response
   return (json.dumps({"data":"No given file type!"}))
 
-@app.route('/insects/<id>', methods = ['DELETE'])
+@app.route('/api/insects/<id>', methods = ['DELETE'])
 def delete_existing_insect(id):
   r = database_service.delete_existing_insect(id)
   response = Response(json.dumps({"data" : r}), mimetype='application/json')
@@ -80,7 +105,7 @@ def delete_existing_insect(id):
 
 # update postojeceg insekta
 # required request data: insect id (in url), data(in body) that has to be altered.
-@app.route('/insects/<id>', methods = ['PUT'])
+@app.route('/api/insects/<id>', methods = ['PUT'])
 def update_existing_insect(id):
   form: dict[str, Any] = request.form.to_dict()
   r = database_service.update_existing_insect(id, form)
@@ -91,7 +116,7 @@ def update_existing_insect(id):
 # treba vratiti novo stvoreni objekt s njegovim identifikatorom.
 # obavezna polja koja moraju doci u requestu: valid order_name, genus, specie.
 # ostala polja bi bilo dobro da ima, ali nisu krucijalna.
-@app.route('/insects', methods = ['POST'])
+@app.route('/api/insects', methods = ['POST'])
 def post_new_insect():
   form: dict[str, Any] = request.form.to_dict()
   try:
@@ -106,7 +131,7 @@ def post_new_insect():
     return response
 
 # speciesCount?low=0&high=0
-@app.route('/orders/speciesCount', methods = ['GET'])
+@app.route('/api/orders/speciesCount', methods = ['GET'])
 def get_orders_where_species_count():
   params: dict[str, Any] = request.args.to_dict()
   r = database_service.get_orders_by_species_count(params)
@@ -115,7 +140,7 @@ def get_orders_where_species_count():
   response.mimetype = 'application/json'
   return response
 
-@app.route('/orders/<id>/metamorphosis', methods = ['GET'])
+@app.route('/api/orders/<id>/metamorphosis', methods = ['GET'])
 def get_metamorphosis_by_order_id(id):
   # ako resurs ne postoji, vratiti 404 i poruku o greski.
   r = database_service.get_metamorphosis_by_order_id(id)
@@ -124,7 +149,7 @@ def get_metamorphosis_by_order_id(id):
   response.mimetype = 'application/json'
   return response
 
-@app.route('/orders/<id>', methods = ['GET'])
+@app.route('/api/orders/<id>', methods = ['GET'])
 def get_order_by_id(id):
   # ako resurs ne postoji, vratiti 404 i poruku.
   r = database_service.get_order_by_id(id)
@@ -133,7 +158,7 @@ def get_order_by_id(id):
   response.mimetype = 'application/json'
   return response
 
-@app.route('/insects/<id>', methods = ['GET'])
+@app.route('/api/insects/<id>', methods = ['GET'])
 def get_insect_by_id(id):
   # ako resurs ne postoji, vratiti 404 i poruku o greski.
   r = database_service.get_insect_by_id(id)
@@ -142,6 +167,7 @@ def get_insect_by_id(id):
   response.mimetype = 'application/json'
   return response
 
+@app.route('/api/insects', methods = ['GET'])
 @app.route('/insects', methods = ['GET'])
 def get_data_table():
   params: dict[str, Any] = request.args.to_dict()
